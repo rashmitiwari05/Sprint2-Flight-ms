@@ -75,20 +75,20 @@
                         </dependency>
             -->
 
-		<!--
+		
 		<dependency>
 			<groupId>oracle</groupId>
 			<artifactId>ojdbc6</artifactId>
 			<version>${oracle_driver.version}</version>
 		</dependency>
--->
+
 		<!-- https://mvnrepository.com/artifact/org.hsqldb/hsqldb -->
-		<dependency>
+		<!--  <dependency>
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
 			<version>${hsqldb.version}</version>
 		</dependency>
-
+-->
 
 	</dependencies>
 

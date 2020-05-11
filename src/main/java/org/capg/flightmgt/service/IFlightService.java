@@ -10,6 +10,6 @@ public interface IFlightService {
 	public Flight modifyFlight(Flight flight);
 	public Flight viewFlight(BigInteger flightNumber);
 	public List<Flight> viewFlight();
-   public  void deleteFlight(BigInteger flightNumber);
+    public  Boolean deleteFlight(BigInteger flightNumber);
     public void validateFlight(Flight flight);
 }
