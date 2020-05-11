@@ -1,10 +1,10 @@
-package org.cap.empmgt;
+package org.capg.flightmgt;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EmployeeManagementApplicationTests {
+class FlightManagementApplicationTests {
 
 	@Test
 	void contextLoads() {
