@@ -1,0 +1,59 @@
+
+<div class="container">
+   
+      <form #flightForm="ngForm" (ngSubmit)="flightForm.value && addFlight(flightForm)" >
+         <div class="form-group">
+             <label>flightNumber</label>
+             <input type="text" class="form-control"  name="flightnumber"  ngModel  #flightnumberCtrl =ngModel  required minlength="12">
+             <div *ngIf="flightnumberCtrl.errors!=null && flightnumberCtrl.errors.required">
+                number is required
+            </div>
+            <div *ngIf ="flightnumberCtrl.errors!=null && flightnumberCtrl.errors.minlength">
+                Min length should be 12
+            </div>
+         </div>
+         <br><br>
+         <div class="form-group">
+             <label>flightModel</label>
+             <input type="text" class="form-control" name="flightmodel"   ngModel  #flightmodelCtrl =ngModel required minlength="2">
+             <div *ngIf="flightmodelCtrl.errors!=null && flightmodelCtrl.errors.required">
+                model is required
+            </div>
+           
+         </div>
+         <br><br>
+         <div class="form-group">
+             <label>carrierName</label>
+             <input type="text" class="form-control"  name="carriername"   ngModel  #carriernameCtrl =ngModel  required  minlength="2">
+             <div *ngIf="carriernameCtrl.errors!=null && carriernameCtrl.errors.required">
+                carriername is required
+            </div>
+            
+         </div>
+         <br><br>
+         <div class="form-group">
+             <label>seatCapacity</label>
+             <input type="text" class="form-control"  name="seatcapacity"  ngModel  #seatcapacityCtrl =ngModel  required  minlength="2">
+             <div *ngIf="seatcapacityCtrl.errors!=null && seatcapacityCtrl.errors.required">
+                seatcapacity is required
+            </div>
+           
+         </div>
+         <br><br>
+         
+          <br><br>
+          <button type="submit" class=" btn btn-primary" >add Flight</button>
+      </form>
+</div>
+      <div *ngIf="addedFlight!==null">
+        <h3>Flight Added</h3>  
+         flightnumber= {{addedFlight.flightNumber}}<br> <br>
+         flightmodel={{addedFlight.flightModel}}<br> <br>
+         carriername={{addedFlight.carrierName}}<br> <br>
+         seatcapacity={{addedFlight.seatCapacity}}<br> <br>
+        </div>
+
+        <li>Existing flightt Details.
+            <button><a href="" routerLink="../list-flights">flight details</a></button>
+        </li>
+   

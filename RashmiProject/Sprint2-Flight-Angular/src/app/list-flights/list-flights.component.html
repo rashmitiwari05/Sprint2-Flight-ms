@@ -1,0 +1,24 @@
+<div class="container" style="margin-top: 70px; margin-left: 300px;">
+  <h1>List</h1>
+  <table border="1">
+    <tr>
+      <th> flightNumber</th><br><br>
+      <th > flightModel</th><br><br>
+       <th > carrierName</th><br><br>
+       <th >  seatCapacity  </th> 
+    
+                
+ </tr>
+
+
+<tr *ngFor="let flight of flightArr"  >
+    <td>{{flight.flightNumber}}</td> 
+    <td>{{ flight.flightModel}}</td> 
+    <td>{{ flight.carrierName}}</td>
+    <td>{{ flight.seatCapacity}}</td>
+    <td><button class="btn btn-success"(click)="deleteFlightById(flight.flightNumber)">Remove</button></td> 
+  </tr>
+</table> 
+</div>
+
+

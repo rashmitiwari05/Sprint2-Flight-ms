@@ -1,0 +1,27 @@
+
+<form #form ="ngForm"  (ngSubmit)=" findFlightById(form)">
+   
+            <label>flightnumber</label>
+            <input type="text" name="flightnumber" ngModel #flightnumberCtrl=ngModel required minlength="2">
+            <div *ngIf="flightnumberCtrl.errors!=null && flightnumberCtrl.errors.required">
+                number is required
+            </div>
+            <div *ngIf ="flightnumberCtrl.errors!=null && flightnumberCtrl.errors.minlength">
+                Min length should be 2
+            </div>
+    
+    
+
+    <button class="btn btn-lg btn-primary" type="submit">Find flight</button>
+</form>
+<div *ngIf="fetched!==null">
+    Stock id = {{fetched.flightNumber}}
+    flightmodel = {{fetched.flightModel}}
+    carriername = {{fetched.carrierName}}
+    seatcapacity = {{fetched.seatCapacity}}
+</div>
+
+<br>
+<div *ngIf="foundStatus=='notfound'">
+    Stock not found !
+    </div>
