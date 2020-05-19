@@ -34,9 +34,9 @@ export class FlightService{
       return result;
     }
 
-     updateFlight(flightNumber:number): Observable<Flight>{
+     updateFlight(flight:Flight,flightNumber:number): Observable<Flight>{
       let url="http://localhost:8086/flights/update/"+ flightNumber;
-      let result:Observable<Flight>= this.client.put<Flight>(url,flightNumber);
+      let result:Observable<Flight>= this.client.put<Flight>(url,flight);
       return result;
       }
 

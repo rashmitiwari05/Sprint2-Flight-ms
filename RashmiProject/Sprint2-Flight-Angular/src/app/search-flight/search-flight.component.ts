@@ -10,24 +10,27 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class SearchFlightComponent implements OnInit {
   service:FlightService;
-  fetched:Flight=null;
-  foundStatus=null;
-  constructor() { }
+
+  constructor(service:FlightService) {
+    this.service=service;
+   }
 
   ngOnInit(): void {
   }
 
-
-  findFlightById(form:any){
+  
+  foundFlight=null;
+  foundStatus=null;
+  findFlight(form:any){
     let details=form.value;
-    let flightnumber = details.flightnumber;
-    let fetched:Observable<Flight>=this.service.findFlightById(flightnumber);
+    let flightNumber = details.flightNumber;
+    let fetched:Observable<Flight>=this.service.findFlightById(flightNumber);
     fetched.subscribe(
-      Flight=>{
-        this.foundStatus=Flight;
+      flight=>{
+        this.foundFlight=flight;
         this.foundStatus="found";
       },
-      err=>{
+         err=>{
         this.foundStatus="notfound";
         console.log("error while fetching");
       }

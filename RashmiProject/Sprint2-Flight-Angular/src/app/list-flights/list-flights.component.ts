@@ -90,4 +90,5 @@ export class ListFlightsComponent implements OnInit {
         }
         this.flightArr.splice(foundIndex,1);
 }
+
 }

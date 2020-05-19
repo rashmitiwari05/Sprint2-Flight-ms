@@ -34,7 +34,7 @@ export class UpdateFlightComponent implements OnInit {
     this.updatedFlight.flightModel=flightmodel;
     this.updatedFlight.carrierName=carriername;
     this.updatedFlight.seatCapacity=seatcapacity;
-   let result= this.service.updateFlight(flightnumber);
+   let result= this.service.updateFlight(this.updatedFlight,flightnumber);
     
     result.subscribe((flight:Flight)=>{
       
